@@ -1,35 +1,51 @@
 import "./style.css";
-import { createHome } from "./home.js";
+import { loadHomeToMain } from "./home.js";
+import { loadMenuToMain } from "./menu.js";
+import { loadContactToMain } from "./contact.js";
 
 const content = document.getElementById("content");
 
 function createHeader() {
   const header = document.createElement("header");
   const h1 = document.createElement("h1");
-  h1.innerText = "Name Of Restaurant";
+  h1.innerText = "Flickering Light";
 
   const nav = document.createElement("div");
   nav.classList.add("nav");
-  const homeLink = document.createElement("a");
-  homeLink.href = "#";
-  homeLink.innerText = "Home";
 
-  const menuLink = document.createElement("a");
-  menuLink.href = "#";
-  menuLink.innerText = "Menu";
+  const homeBtn = document.createElement("button");
+  homeBtn.innerText = "Home";
+  homeBtn.addEventListener("click", () => {
+    loadHomeToMain();
+  });
 
-  const contactLink = document.createElement("a");
-  contactLink.href = "#";
-  contactLink.innerText = "Contact";
+  const menuBtn = document.createElement("button");
+  menuBtn.innerText = "Menu";
+  menuBtn.addEventListener("click", () => {
+    loadMenuToMain();
+  });
 
-  nav.appendChild(homeLink);
-  nav.appendChild(menuLink);
-  nav.appendChild(contactLink);
+  const contactBtn = document.createElement("button");
+  contactBtn.innerText = "Contact";
+  contactBtn.addEventListener("click", () => {
+    loadContactToMain();
+  });
+
+  nav.appendChild(homeBtn);
+  nav.appendChild(menuBtn);
+  nav.appendChild(contactBtn);
 
   header.appendChild(h1);
   header.appendChild(nav);
 
   return header;
+}
+
+function createMainSection() {
+  const main = document.createElement("div");
+  main.setAttribute("id", "main");
+
+  return main;
 }
 
 function createFooter() {
@@ -68,5 +84,9 @@ function createFooter() {
 }
 
 content.appendChild(createHeader());
-content.appendChild(createHome());
+content.appendChild(createMainSection());
 content.appendChild(createFooter());
+
+loadHomeToMain();
+
+// loadMenuToMain();

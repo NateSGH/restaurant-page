@@ -4,7 +4,7 @@
 :root {
   --font-color: rgba(0, 10, 38, 1);
   --header-footer-color: rgba(165, 165, 165, 0.2);
-  --info-bg-color: rgba(242, 242, 242, 0.8);
+  --info-bg-color: rgba(242, 242, 242, 0.95);
   --info-font-color: rgba(0, 10, 38, 1);
   --divider-color: rgba(0, 10, 38, 1);
   --icons-color: rgba(0, 10, 38, 1);
@@ -46,12 +46,26 @@ a {
   font-weight: bold;
 }
 
-header .nav a {
-  margin: 0 20px;
+header .nav button {
+  font: inherit;
+  border: none;
+  color: var(--font-color);
+  font-weight: bold;
   font-size: 25px;
+  margin-right: 50px;
 }
 
-.main_content {
+header .nav button:focus {
+  border-bottom: 1px solid var(--divider-color);
+}
+
+header .nav button:hover {
+  transform: scale(1.05);
+}
+
+.home-content,
+.menu-content,
+.contact-content {
   background: url("./background.jpg") no-repeat center center/cover;
   width: 100vw;
   height: 80vh;
@@ -61,7 +75,8 @@ header .nav a {
   position: relative;
 }
 
-.main_content p {
+.home-content .restaurant_info,
+.contact-content .contact-info {
   background-color: var(--info-bg-color);
   color: var(--info-font-color);
   margin-left: 50px;
@@ -72,6 +87,16 @@ header .nav a {
   transform: translateY(-50%);
   font-size: 25px;
   font-weight: bold;
+}
+
+.menu-content .menu-info {
+  background-color: var(--info-bg-color);
+  color: var(--info-font-color);
+  width: 50vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
 }
 
 footer {
