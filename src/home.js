@@ -5,12 +5,11 @@ function createHome() {
   const homeInfo = document.createElement("div");
   homeInfo.classList.add("restaurant_info");
 
-  const text = document.createElement("p");
-  text.innerText = "A true taste of Italia.";
+  const text = document.createElement("h2");
+  text.innerText = "A true taste of Italia";
 
   const info = document.createElement("p");
-  info.innerText =
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates eveniet quidem ad suscipit nihil modi maiores tempore nulla laborum.";
+  info.innerText = "Lorem ipsum dolor sit amet consectetur adipisicing elit.";
 
   homeInfo.appendChild(text);
   homeInfo.appendChild(info);

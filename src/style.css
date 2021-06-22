@@ -4,10 +4,16 @@
 :root {
   --font-color: rgba(0, 10, 38, 1);
   --header-footer-color: rgba(165, 165, 165, 0.2);
-  --info-bg-color: rgba(242, 242, 242, 0.95);
+  --home-info-bg-color: rgba(0, 0, 0, 0.5);
+  --contact-info-bg-color: rgba(0, 0, 0, 0.3);
+  --info-bg-color: rgba(242, 242, 242, 0.85);
   --info-font-color: rgba(0, 10, 38, 1);
   --divider-color: rgba(0, 10, 38, 1);
   --icons-color: rgba(0, 10, 38, 1);
+}
+
+html {
+  height: 100%;
 }
 
 body {
@@ -53,10 +59,15 @@ header .nav button {
   font-weight: bold;
   font-size: 25px;
   margin-right: 50px;
+  padding-bottom: 5px;
+}
+
+header .nav button:active {
+  font-size: 24px;
 }
 
 header .nav button:focus {
-  border-bottom: 1px solid var(--divider-color);
+  border-bottom: 2px solid var(--divider-color);
 }
 
 header .nav button:hover {
@@ -66,19 +77,27 @@ header .nav button:hover {
 .home-content,
 .menu-content,
 .contact-content {
-  background: url("./background.jpg") no-repeat center center/cover;
   width: 100vw;
   height: 80vh;
   margin: 0;
   padding: 0;
-  z-index: -1;
   position: relative;
 }
 
-.home-content .restaurant_info,
-.contact-content .contact-info {
-  background-color: var(--info-bg-color);
-  color: var(--info-font-color);
+.home-content {
+  background: url("./background.jpg") no-repeat center center/cover;
+}
+.menu-content {
+  background: url("./menu-background.jpg") no-repeat center center/cover;
+}
+
+.contact-content {
+  background: url("./contact-background.jpg") no-repeat center center/cover;
+}
+
+.home-content .restaurant_info {
+  background-color: var(--home-info-bg-color);
+  color: var(--info-bg-color);
   margin-left: 50px;
   padding: 10px;
   width: 25vw;
@@ -89,14 +108,52 @@ header .nav button:hover {
   font-weight: bold;
 }
 
+.menu-content {
+  position: relative;
+  height: 80vh;
+  overflow-y: auto;
+}
+
 .menu-content .menu-info {
   background-color: var(--info-bg-color);
   color: var(--info-font-color);
   width: 50vw;
+  height: auto;
   position: absolute;
-  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.menu-section-h {
+  padding: 5px;
+  border-bottom: 1px solid var(--divider-color);
+}
+.menu-item-name,
+.menu-item-cost {
+  font-weight: bold;
+}
+.menu-item-name {
+  font-size: 20px;
+}
+.menu-item-desc {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.contact-content .contact-info {
+  background-color: var(--contact-info-bg-color);
+  color: var(--info-bg-color);
+  margin-left: 50px;
+  padding: 10px;
+  width: 40vw;
+  position: absolute;
+  top: 30%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
 }
 
 footer {
@@ -122,7 +179,7 @@ footer {
   opacity: 0.7;
 }
 
-.fab:focus {
+.fab:active {
   transform: scale(0.95);
 }
 

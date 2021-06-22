@@ -60,7 +60,7 @@ function createMenu() {
   );
 
   const stPastaTwo = new menuItem(
-    "TDeep Dish Lasagna",
+    "Deep Dish Lasagna",
     "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     "16.25"
   );
