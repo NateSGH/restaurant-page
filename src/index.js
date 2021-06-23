@@ -16,22 +16,37 @@ function createHeader() {
   const homeBtn = document.createElement("button");
   homeBtn.innerText = "Home";
   homeBtn.addEventListener("click", () => {
-    loadHomeToMain();
-    setPhotoAuthor("home", document.getElementById("photo-text"));
+    if (
+      document.getElementById("main").firstElementChild.className !==
+      "home-content"
+    ) {
+      loadHomeToMain();
+      setPhotoAuthor("home", document.getElementById("photo-text"));
+    }
   });
 
   const menuBtn = document.createElement("button");
   menuBtn.innerText = "Menu";
   menuBtn.addEventListener("click", () => {
-    loadMenuToMain();
-    setPhotoAuthor("menu", document.getElementById("photo-text"));
+    if (
+      document.getElementById("main").firstElementChild.className !==
+      "menu-content"
+    ) {
+      loadMenuToMain();
+      setPhotoAuthor("menu", document.getElementById("photo-text"));
+    }
   });
 
   const contactBtn = document.createElement("button");
   contactBtn.innerText = "Contact";
   contactBtn.addEventListener("click", () => {
-    loadContactToMain();
-    setPhotoAuthor("contact", document.getElementById("photo-text"));
+    if (
+      document.getElementById("main").firstElementChild.className !==
+      "contact-content"
+    ) {
+      loadContactToMain();
+      setPhotoAuthor("contact", document.getElementById("photo-text"));
+    }
   });
 
   nav.appendChild(homeBtn);
