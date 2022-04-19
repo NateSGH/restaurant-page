@@ -10,7 +10,7 @@ _First use of webpack and practice of DOM manipulation -> usage of JavaScript al
 
 - HTML
 - CSS
-- Vanilla JS
+- JavaScript
 - Webpack
 
 ## Live Demo:
